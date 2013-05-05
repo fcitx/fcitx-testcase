@@ -7,6 +7,7 @@ fi
 export TESTDIR
 
 mkdir -p "${TESTDIR}"
+rm -rf ${TESTDIR}/*
 
 for f in profile/*
 do
@@ -15,7 +16,7 @@ do
     rm -rf "${SANDBOXDIR}"
     pushd . > /dev/null 2>&1
     cd "$f"
-    sh ./run.sh > "${TESTDIR}/${TESTNAME}.result"
+    sh ./run.sh > "${TESTDIR}/${TESTNAME}.txt"
     diff "${TESTDIR}/${TESTNAME}.result" expect || exit 1
     popd > /dev/null 2>&1
 done
