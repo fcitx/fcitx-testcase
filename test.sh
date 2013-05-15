@@ -1,5 +1,7 @@
 #!/bin/sh
 
+export LC_ALL=C
+
 if [ -z "$TESTDIR" ]; then
     TESTDIR="`pwd`/test"
 fi
