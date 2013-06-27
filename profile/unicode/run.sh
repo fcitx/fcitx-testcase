@@ -2,7 +2,7 @@
 
 run()
 {
-fcitx-testbed `cat addons` keysequence
+fcitx-testbed -i pinyin `cat addons` keysequence
 }
 
-run 2>&1 | grep -E '(PREEDIT|CANDIDATE)'
+run 2>&1 | grep -E '(PREEDIT|CANDIDATE)' | grep -v '^PREEDIT:$'
