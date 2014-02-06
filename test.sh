@@ -19,6 +19,7 @@ do
     pushd . > /dev/null 2>&1
     cd "$f"
     sh ./run.sh > "${TESTDIR}/${TESTNAME}.txt"
+    echo "${TESTNAME}"
     diff "${TESTDIR}/${TESTNAME}.txt" expect || exit 1
     popd > /dev/null 2>&1
 done
